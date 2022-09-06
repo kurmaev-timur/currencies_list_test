@@ -1,0 +1,1 @@
+# currencies_list_test
