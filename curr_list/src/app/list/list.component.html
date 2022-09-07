@@ -1,0 +1,24 @@
+
+<mat-toolbar>
+    <img src="/assets/logo@2x.png">
+    <span> Тестовое задание по отображению списка валют</span>
+
+</mat-toolbar>
+
+<div class="actions">
+    <button mat-button (click)="refreshList()">Обновить список валют мануально</button>
+    <mat-slide-toggle (change)="changeToggle($event)">Обновлять данные автоматически</mat-slide-toggle>
+    <input matInput type="number" (input)="getInputValue($event)" placeholder="Введите сумму">
+</div>
+
+
+<mat-list role="list" >
+    <mat-list-item role="listitem"  *ngFor = "let item of cbrResponse">
+        {{item.Name}}  :
+        <span *ngIf="isCalculated(item)">{{item.Value}}</span>
+        {{item.calcValue}}
+    </mat-list-item>
+  </mat-list>
+
+
+
